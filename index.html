@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Play Distance Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Football Play Distance Tracker</h1>
+
+    <div class="field-container">
+      <!-- Left side panels (6) -->
+      <div class="panel"></div>
+      <div class="panel"><div class="yard-label">10</div></div>
+      <div class="panel"><div class="yard-label">20</div></div>
+      <div class="panel"><div class="yard-label">30</div></div>
+      <div class="panel"><div class="yard-label">40</div></div>
+      <div class="panel"><div class="yard-label">50</div></div>
+      <div class="panel"><div class="yard-label">40</div></div>
+      <div class="panel"><div class="yard-label">30</div></div>
+      <div class="panel"><div class="yard-label">20</div></div>
+      <div class="panel"><div class="yard-label">10</div></div>
+      <div class="panel"></div>
+      <div class="panel"></div>
+    </div>
+
+    <div class="input-area">
+      <div>
+        <label for="leftInput">Left Side Yard:</label>
+        <input
+          type="number"
+          id="leftInput"
+          min="0"
+          max="50"
+          placeholder="Enter yard (0-50)"
+        />
+        <button id="leftSubmit">Submit Left</button>
+      </div>
+      <div>
+        <label for="rightInput">Right Side Yard:</label>
+        <input
+          type="number"
+          id="rightInput"
+          min="0"
+          max="50"
+          placeholder="Enter yard (0-50)"
+        />
+        <button id="rightSubmit">Submit Right</button>
+      </div>
+    </div>
+
+    <div class="clear-button">
+      <button id="clearButton">Clear Field</button>
+    </div>
+
+    <h2 id="distanceDisplay">Distance:</h2>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Field container setup for both sides (12 panels total) */
+.field-container {
+  width: 613px; /* 12 panels (50px each) + 11px for separators */
+  height: 300px;
+  border: 1px solid black; /* 1 pixel wide outer border */
+  display: flex; /* To arrange the panels in a row */
+  position: relative; /* Needed for marker placement */
+  margin: 0 auto;
+  margin-bottom: 20px; /* For space below the field */
+}
+
+/* Panel setup: each panel is 50px wide, with a 1px separator between them */
+.panel {
+  width: 50px;
+  height: 100%;
+  border-right: 1px solid black; /* 1 pixel separator between panels */
+  position: relative;
+}
+
+.panel:last-child {
+  border-right: none; /* No border on the last panel */
+}
+
+/* Updated yard-labels positioned above the field */
+.yard-label {
+  position: absolute;
+  top: -20px; /* Move the labels above the field */
+  left: 100%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Green yard label style */
+.green-yard-label {
+  position: absolute;
+  top: 50px; /* Move the labels above the field */
+  left: 100%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: green;
+  background-color: white; /* Adds white background */
+  padding: 2px 5px; /* Optional: Adds padding around the text for better readability */
+  border-radius: 3px; /* Optional: Adds slight rounding to the background */
+  z-index: 10; /* Ensure the label is on top of the lines */
+}
+
+/* Red yard label style */
+.red-yard-label {
+  position: absolute;
+  top: 100px; /* Move the labels above the field */
+  left: 100%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: red;
+  background-color: white; /* Adds white background */
+  padding: 2px 5px; /* Optional: Adds padding around the text for better readability */
+  border-radius: 3px; /* Optional: Adds slight rounding to the background */
+  z-index: 10; /* Ensure the label is on top of the lines */
+}
+
+/* Input area styling */
+.input-area {
+  display: flex;
+  justify-content: space-between;
+  width: 613px;
+  margin: 20px auto;
+}
+
+.input-area div {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.clear-button {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+/* Style for the input boxes */
+input[type="number"] {
+  font-size: 24px; /* Increase the font size */
+  width: 100px; /* Make the input boxes wider */
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Style for the submit buttons */
+button {
+  font-size: 24px;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+/* Marker CSS */
+.marker {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 2px;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
