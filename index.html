@@ -10,8 +10,10 @@
     <h1>Football Play Distance Tracker</h1>
 
     <div class="field-container">
+      <!-- Left End Zone -->
+      <div class="panel end-zone-panel"></div>
+
       <!-- Left side panels (6) -->
-      <div class="panel"></div>
       <div class="panel"><div class="yard-label">10</div></div>
       <div class="panel"><div class="yard-label">20</div></div>
       <div class="panel"><div class="yard-label">30</div></div>
@@ -22,40 +24,60 @@
       <div class="panel"><div class="yard-label">20</div></div>
       <div class="panel"><div class="yard-label">10</div></div>
       <div class="panel"></div>
-      <div class="panel"></div>
+      <!-- Right End Zone -->
+      <div class="panel end-zone-panel"></div>
     </div>
 
-    <div class="input-area">
-      <div>
-        <label for="leftInput">Left Side Yard:</label>
-        <input
-          type="number"
-          id="leftInput"
-          min="0"
-          max="50"
-          placeholder="Enter yard (0-50)"
-        />
-        <button id="leftSubmit">Submit Left</button>
+    <div class="input-container">
+      <!-- Left Side Input -->
+      <button id="leftSubmit">yd</button>
+      <input
+        type="number"
+        id="leftInput"
+        min="0"
+        max="50"
+        placeholder="yard line"
+      />
+
+      <div class="clear-button">
+        <button id="clearButton">Clear Field</button>
       </div>
-      <div>
-        <label for="rightInput">Right Side Yard:</label>
-        <input
-          type="number"
-          id="rightInput"
-          min="0"
-          max="50"
-          placeholder="Enter yard (0-50)"
-        />
-        <button id="rightSubmit">Submit Right</button>
-      </div>
-    </div>
 
-    <div class="clear-button">
-      <button id="clearButton">Clear Field</button>
+      <!-- Right Side Input -->
+      <input
+        type="number"
+        id="rightInput"
+        min="0"
+        max="50"
+        placeholder="yard line"
+      />
+      <button id="rightSubmit">yd</button>
     </div>
-
     <h2 id="distanceDisplay">Distance:</h2>
-
     <script src="script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Set focus to the left input field by default
+        const leftInput = document.getElementById("leftInput");
+        const rightInput = document.getElementById("rightInput");
+        leftInput.focus();
+
+        // 2. Make Tab switch between left and right input fields
+        leftInput.addEventListener("keydown", function (e) {
+          if (e.key === "Tab") {
+            e.preventDefault(); // Prevent the default tab behavior
+            rightInput.focus(); // Move focus to the right input field
+          }
+        });
+
+        rightInput.addEventListener("keydown", function (e) {
+          if (e.key === "Tab") {
+            e.preventDefault(); // Prevent the default tab behavior
+            leftInput.focus(); // Move focus back to the left input field
+          }
+        });
+      });
+    </script>
   </body>
 </html>

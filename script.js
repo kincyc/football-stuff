@@ -14,8 +14,8 @@ let greenYard = null,
   isGreenLeft = null,
   isRedLeft = null; // Track yard values and sides
 
-const centerPixel = 307; // The center of the field (50-yard line) in pixels
-const pixelsPerYard = 5; // Every yard corresponds to 5 pixels
+const centerPixel = 306; // The center of the field (50-yard line) in pixels
+const pixelsPerYard = 5.1; // Every yard corresponds to 5 pixels
 
 // Function to create and position a marker
 function createMarker(position, color, yard) {
@@ -115,6 +115,7 @@ function calculateDistance() {
 
 // Function to handle yard input
 function handleYardSubmit(yard, isLeft) {
+  // Validate yard value to be within 0 and 50
   if (!isNaN(yard) && yard >= 0 && yard <= 50) {
     // Calculate position based on which side (left or right) the input is from
     const position = isLeft
@@ -131,6 +132,9 @@ function handleYardSubmit(yard, isLeft) {
 
     // Calculate distance once both markers are placed
     calculateDistance();
+  } else {
+    // Provide a message if the value is out of range
+    alert("Please enter a yard value between 0 and 50.");
   }
 }
 

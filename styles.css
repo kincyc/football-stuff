@@ -12,8 +12,9 @@ body {
 
 /* Field container setup for both sides (12 panels total) */
 .field-container {
-  width: 613px; /* 12 panels (50px each) + 11px for separators */
-  height: 300px;
+  width: 611x; /* 12 panels (50px each) + 11px for separators */
+  background-color: lightgreen;
+  height: 250px;
   border: 1px solid black; /* 1 pixel wide outer border */
   display: flex; /* To arrange the panels in a row */
   position: relative; /* Needed for marker placement */
@@ -29,81 +30,77 @@ body {
   position: relative;
 }
 
-.panel:last-child {
-  border-right: none; /* No border on the last panel */
+/* Style the end-zone panels separately */
+.end-zone-panel {
+  width: 50px;
+  height: 100%;
+  background-color: lightgray; /* Optional: to differentiate the end zones */
+  /* border-right: 1px solid black; Add a thick boundary for the end zone */
 }
 
-/* Updated yard-labels positioned above the field */
-.yard-label {
-  position: absolute;
-  top: -20px; /* Move the labels above the field */
-  left: 100%;
-  transform: translateX(-50%);
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* Green yard label style */
-.green-yard-label {
-  position: absolute;
-  top: 50px; /* Move the labels above the field */
-  left: 100%;
-  transform: translateX(-50%);
-  font-size: 14px;
-  font-weight: bold;
-  color: green;
-  background-color: white; /* Adds white background */
-  padding: 2px 5px; /* Optional: Adds padding around the text for better readability */
-  border-radius: 3px; /* Optional: Adds slight rounding to the background */
-  z-index: 10; /* Ensure the label is on top of the lines */
-}
-
-/* Red yard label style */
+/* Yard-labels positioned above the field */
+.yard-label,
+.green-yard-label,
 .red-yard-label {
   position: absolute;
-  top: 100px; /* Move the labels above the field */
   left: 100%;
   transform: translateX(-50%);
   font-size: 14px;
   font-weight: bold;
-  color: red;
-  background-color: white; /* Adds white background */
-  padding: 2px 5px; /* Optional: Adds padding around the text for better readability */
-  border-radius: 3px; /* Optional: Adds slight rounding to the background */
+  background-color: white;
+  padding: 2px 5px; /* Adds padding around the text */
+  border-radius: 3px; /* Slight rounding for readability */
   z-index: 10; /* Ensure the label is on top of the lines */
 }
 
-/* Input area styling */
-.input-area {
-  display: flex;
-  justify-content: space-between;
-  width: 613px;
-  margin: 20px auto;
+/* Specific label styles */
+.green-yard-label {
+  top: 50px; /* Green label position */
+  color: green;
 }
 
-.input-area div {
-  flex: 1;
-  padding: 0 10px;
+.red-yard-label {
+  top: 100px; /* Red label position */
+  color: red;
 }
 
+/* Input box styles */
+input[type="number"] {
+  font-size: 20px; /* Increased font size */
+  width: 100px; /* Increased width */
+  padding: 10px; /* Increased padding for bigger input */
+  margin: 0 30px; /* Moved them farther apart */
+  -moz-appearance: textfield; /* Remove increment/decrement arrows */
+  text-align: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Remove increment/decrement buttons */
+}
+
+/* Clear button styles */
 .clear-button {
   margin-top: 20px;
   display: inline-block;
+  text-align: center;
 }
 
-/* Style for the input boxes */
-input[type="number"] {
-  font-size: 24px; /* Increase the font size */
-  width: 100px; /* Make the input boxes wider */
-  padding: 10px;
-  margin: 10px;
+/* Center the input fields, buttons, and clear button */
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-/* Style for the submit buttons */
+/* Submit button (smaller) */
 button {
-  font-size: 24px;
-  padding: 10px 20px;
-  margin: 10px;
+  font-size: 14px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 /* Marker CSS */
@@ -120,4 +117,11 @@ button {
 
 .red {
   background-color: red;
+}
+
+/* Distance display */
+#distanceDisplay {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
 }
